@@ -23,6 +23,7 @@ class EventsController < ApplicationController
   
   # GET  /events/1/students
   def students
+    @bg = Rails.public_path.to_s + '/bg_upu.jpg'
     @event = Event.all.find(params[:event_id])
     @students = @event.students
   end
