@@ -1,30 +1,16 @@
-<div class="container">
-<%= simple_form_for(@student) do |f| %>
-  <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
-
-      <ul>
-      <% @student.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= simple_form_for([event, student], html: { class: 'form-inline '}) do |f| %>
+  <div class="panel-body">
+  
+    <%= f.hidden_field :event_id, :value => event.id %> 
+    <div class="input-group col-md-10 col-md-offset-1">
+      <%= f.input :name, label:false, placeholder: "Nome", wrapper:false %> 
+      <div class="input-group-btn">
+        <%= f.submit "Adicionar", class:"btn btn-success col-md-12", wrapper:false %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :cpf %><br>
-    <%= f.text_field :cpf %>
-  </div>
-  <div class="field">
-    <%= f.association :event %><br>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+      
+    
+  </div>    
 <% end %>
-</div>
+
+        

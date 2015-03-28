@@ -26,9 +26,9 @@ Rails.application.routes.draw do
   #     end
   #   end
   
-  resources :students
+  
   resources :events do
-    get 'students' => 'events#students'
+    resources :students
   end
   
   

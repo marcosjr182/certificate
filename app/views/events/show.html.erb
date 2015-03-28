@@ -1,9 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        <%= @event.name %> - Lista de Alunos
+        <%= link_to "Novo Aluno", new_event_student_path(@event), class: 'btn btn-sm btn-primary pull-right' %>
+      </div>  
+        
+        <table class="panel-body table table-striped">
+          
+          <% @students.each do |student| %>
+              <tr>
+                <td ><%= student.name %></td>
+                <td class="text-right">
+                  <%= link_to 'Editar', edit_event_path(event), class: 'btn btn-default' %>
+                  <%= link_to 'Excluir', event, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          
+        </table>    
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+    </div>
+  </div>
+</div>    

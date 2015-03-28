@@ -1,25 +1,24 @@
-<h1>Listing events</h1>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading clearfix">
+        Lista de Eventos
+        <%= link_to "Novo Evento", new_event_path, class: 'btn btn-sm btn-primary pull-right' %>
+      </div>  
+        
+        <table class="panel-body table table-striped">
+          
+          <% @events.each do |event| %>
+              <tr>
+                <td ><%= event.name %></td>
+                <td class="text-right"><%= link_to 'Ver Alunos', event, class: 'btn btn-default' %>
+                    <%= link_to 'Editar', edit_event_path(event), class: 'btn btn-default' %>
+                    <%= link_to 'Excluir', event, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          
+        </table>    
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+    </div>
+  </div>
+</div>    

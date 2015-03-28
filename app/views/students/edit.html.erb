@@ -1,6 +1,11 @@
-<h1>Editing student</h1>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading title">
+        Novo Aluno
+      </div>  
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>    
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
