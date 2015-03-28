@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for(@event, html: { class: 'horizontal-form '}) do |f| %>
-          <%= f.input :top_margin, label: "Distância do topo (em px): <br>".html_safe %>
+          <%= f.input :top_margin, label: "Distância do topo: <br/>".html_safe %>
           <%= f.input :bg, as: :image_preview, label:"Imagem de fundo: ", input_html: {preview_version: :thumb} %>
           
           <%= f.submit "Salvar", class: "btn btn-primary" %>
