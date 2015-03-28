@@ -4,9 +4,13 @@
     <%= f.hidden_field :event_id, :value => event.id %> 
     <div class="input-group col-md-10 col-md-offset-1">
       <%= f.input :name, label:false, placeholder: "Nome", wrapper:false %> 
+      
       <div class="input-group-btn">
-        <%= f.submit "Adicionar", class:"btn btn-success col-md-12", wrapper:false %>
+        <button class='btn btn-success col-md-12'>
+          <%= icon('user-plus') %>
+        </button>  
       </div>
+      
     </div>
       
     

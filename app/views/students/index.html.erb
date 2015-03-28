@@ -3,7 +3,11 @@
     <div class="panel panel-default">
       <div class="panel-heading clearfix">
         <%= @event.name %> - Lista de Alunos
-        <%= link_to "Gerar PDF", event_students_path(@event, format:"pdf"), class: 'btn btn-sm btn-primary pull-right' %>
+        <div class="btn-group pull-right">
+          <%= button_tag icon('cog', 'Opções'), class: 'btn btn-sm btn-primary', type:'button', data: { toggle:'modal', target:'#options_modal' } %>
+          <%= link_to "Gerar PDF", event_students_path(@event, format:"pdf"), class: 'btn btn-sm btn-primary' %>
+          
+        </div>
       </div>  
       
       <%= render partial: "form", locals: {event: @event, student: @student} %>
@@ -15,7 +19,7 @@
                 <td class="col-md-8"><%= student.name %></td>
                 <td class="col-md-4 text-right">
                   <%= link_to 'Editar', edit_event_student_path(@event,student), class: 'btn btn-sm btn-default' %>
-                  <%= link_to 'Excluir', [@event,student], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <%= link_to icon('trash'), [@event,student], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
           
@@ -24,3 +28,5 @@
     </div>
   </div>
 </div>    
+
+<%= render "events/options_modal" %>
