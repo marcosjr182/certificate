@@ -7,7 +7,9 @@ class StudentsController < ApplicationController
   def index
     @student = Student.new
 
-    
+    @bg = "public"+@event.bg_url.to_s
+    @top_margin = @event.top_margin
+    @students = @event.students
   end
 
   # GET /students/1
