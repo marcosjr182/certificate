@@ -8,12 +8,12 @@
       
       <%= render partial: "form", locals: {event: @event, student: @student} %>
 
-        <table class="panel-body table table-striped">
+        <table class="panel-body table table-striped clearfix">
           
           <% @students.each do |student| %>
               <tr>
                 <td ><%= student.name %></td>
-                <td class="text-right">
+                <td class="pull-right">
                   <%= link_to 'Editar', edit_event_student_path(@event,student), class: 'btn btn-default' %>
                   <%= link_to 'Excluir', [@event,student], class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
