@@ -36,8 +36,11 @@ gem 'spring',        group: :development
 gem 'prawn-rails'
 
 gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'simple_form'
+
+gem 'simple_form_fancy_uploads'
 
 gem 'font-awesome-sass', '~> 4.3.0'
 

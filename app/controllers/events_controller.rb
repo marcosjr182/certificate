@@ -22,13 +22,6 @@ class EventsController < ApplicationController
   def edit
   end
   
-  # GET  /events/1/students
-  def students
-    @bg = Rails.public_path.to_s + '/bg_upu.jpg'
-    @event = Event.all.find(params[:event_id])
-    @students = @event.students
-  end
-
   # POST /events
   # POST /events.json
   def create
@@ -77,6 +70,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name,:list,:top_margin)
+      params.require(:event).permit(:name,:bg,:list,:top_margin)
     end
 end

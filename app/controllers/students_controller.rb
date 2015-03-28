@@ -5,8 +5,10 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.json
   def index
-    @bg = Rails.public_path.to_s + '/bg_upu.jpg'
     @student = Student.new
+
+    @bg = "public"+@event.bg.url
+    @top_margin = @event.top_margin
     @students = @event.students
   end
 
