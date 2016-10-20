@@ -1,28 +1,15 @@
-== README
+=== Gerador de Certificados
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sistema simples em  Rails 4.1, usando a gem prawn-rails para gerar o arquivo pdf com todos os certificados daquele evento.
 
-Things you may want to cover:
+* Fundo do certificado pode ser alterado usando uma imagem
+* Posição x onde o nome do participante aparece pode ser alterado
+* Participantes ainda precisam ser adicionados manualmente
 
-* Ruby version
+=== Certificates Generator
 
-* System dependencies
+Simple application using Rails 4.1 and prawn-rails gem to generate a single file containing all participants certificates to print.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Certificate's background can modified using a image file.
+* It is possible to have an custom x position where the participant's name shows up. 
+* For now, the participants still need to be added one by one.
